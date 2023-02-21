@@ -32,7 +32,7 @@ pub type Generator<C> = Plaintext<C>;
 
 pub type SecretKey<C> = <C as ProjectiveCurve>::ScalarField;
 
-#[derive(Clone, Copy, PartialEq, Debug, CanonicalSerialize, CanonicalDeserialize)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, Debug, CanonicalSerialize, CanonicalDeserialize)]
 pub struct Ciphertext<C: ProjectiveCurve>(pub C::Affine, pub C::Affine);
 
 impl<C: ProjectiveCurve> ToBytes for Ciphertext<C> {
